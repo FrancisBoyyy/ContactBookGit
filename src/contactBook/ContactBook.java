@@ -2,6 +2,10 @@ package contactBook;
 
 import contactBook.Contact;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 public class ContactBook {
     static final int DEFAULT_SIZE = 100;
 

@@ -159,17 +159,30 @@ public class Main {
         else System.out.println(BOOK_EMPTY);
     }
 
+
+    /**
+     * Finds contact given a number, outputs the result to console
+     * @param in Scanner, used to read the phone to check
+     * @param cBook the system where to check
+     */
     private static void FindContactWithNumber(Scanner in, ContactBook cBook) {
         int phone;
+
         phone = in.nextInt(); in.nextLine();
-        Contact contact;
-        contact = cBook.getContactByNumber(phone);
-        if (contact != null) System.out.println(contact.getName());
-        else System.out.println(NO_PHONE);
+        Contact contact = cBook.getContactByNumber(phone);
+        if (contact != null)
+            System.out.println(contact.getName());
+        else
+            System.out.println(NO_PHONE);
     }
 
+    /**
+     * Checks for duplicated phones, and outputs the result in the console.
+     * @param cBook the system to check inside
+     */
     private static void CheckRepeatedPhones(ContactBook cBook) {
         boolean repeated = false;
+
         cBook.initializeIterator();
         while( cBook.hasNext() && !repeated ) {
             Contact c = cBook.next();
@@ -178,7 +191,6 @@ public class Main {
                 Contact d = cBookTmp.next();
                 if (c.sameNumber(d))
                     repeated =true;
-
             }
         }
         if (repeated)
