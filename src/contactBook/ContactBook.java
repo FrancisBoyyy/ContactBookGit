@@ -107,6 +107,11 @@ public class ContactBook {
         return contacts[currentContact++];
     }
 
+    /**
+     * Auxiliar method used to get contact by number
+     * @param number
+     * @return
+     */
     public Contact getContactByNumber(int number) {
         int i = 0;
         Contact result = null;
